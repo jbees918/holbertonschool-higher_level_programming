@@ -1,3 +1,2 @@
-#!/usr/bin/python3
-
-print(' '.join([chr(ch) for ch in range(97, 123)]), end=' ')
+n range(97, 123):
+    print("{}".format(chr(ltr)), end="")
