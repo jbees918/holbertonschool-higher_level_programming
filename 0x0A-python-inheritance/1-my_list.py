@@ -1,10 +1,15 @@
 #!/usr/bin/python3
-"""Inheritance second task"""
+"""
+Auther: Josh Beeson
+Date: Jan, 2023
+class MyList that inherits from list
+"""
 
 
 class MyList(list):
-    """list and then some"""
+    """ Inherits from list """
+
     def print_sorted(self):
-        _t = self[:]
-        _t.sort()
-        print(_t)
+        """ Prints sorted list (ascending) """
+
+        print(sorted(self))
