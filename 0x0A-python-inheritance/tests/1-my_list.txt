@@ -1,26 +1,72 @@
+# test run with python3 -m doctest -v ./tests/1-my_list.txt
+
+=============================
+ How to use 1-my_list.py
+=============================
 
 >>> MyList = __import__('1-my_list').MyList
 
-    >>> my_list = MyList()
-    >>> my_list.append(1)
-    >>> my_list.append(4)
-    >>> my_list.append(2)
-    >>> my_list.append(3)
-    >>> my_list.append(5)
+Correct examples
+================
 
-    >>> print(my_list)
-    [1, 4, 2, 3, 5]
+Can print lists sorted
+(ascending order)
 
-    >>> my_list.print_sorted()
-    [1, 2, 3, 4, 5]
+::
 
-    >>> print(my_list)
-    [1, 4, 2, 3, 5]
-    
-    >>> my_list = MyList([5, 5, 7, 1, -2, 0])
+    >>> MyList().print_sorted()
 
-    >>> print(my_list)
-    [5, 5, 7, 1, -2, 0]
+::
 
-    >>> my_list.print_sorted()
-    [-2, 0, 1, 5, 5, 7]
+    >>> MyList([-3, 2, 4]).print_sorted()
+    [2, 4, -3]
+
+::
+
+    >>> MyList(["Bond", "Jenny", "Joy"]).print_sorted()
+    ['Bond', 'Jenny', 'Joy']
+
+::
+
+    >>> MyList([]).print_sorted()
+    []
+
+:: Base class list methods are inherited:
+
+    >>> the_list = MyList()
+    >>> the_list.append('I')
+    >>> the_list.append('H')
+    >>> print(the_list)
+    ['I', 'H']
+    >>> the_list.print_sorted()
+    ['H', 'I']
+    >>> print(the_list)
+    ['I', 'H']
+
+:: Class instances have MyList type:
+
+    >> the_list = MyList()
+    >>> type(the_list)
+    <class '1-my_list.MyList'>
+    >>> print(the_list.print_sorted)
+    <bound method MyList.print_sorted of []>
+
+:: Using with dicts:
+
+    >> MyList({"a": 5, "b": 2}).print_sorted()
+    ['a', 'b']
+
+:: Using with sets:
+    >>> MyList = {1, 2, 3}
+    >>> MyList.print_sorted()
+    ... 1, 2, 3
+    >>> (1, 2, 3)
+
+Incorrect examples
+==================
+
+    >>> the_list = MyList()
+    >>> the_list = ["hi", 1, 8, 5]
+    Traceback (most recent call last):
+    ...
+    TypeError: 'type' object is not iterable
