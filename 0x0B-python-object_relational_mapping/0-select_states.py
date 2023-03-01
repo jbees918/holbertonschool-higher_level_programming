@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Get All States, requires User, Password, Database'''
+'''Get All States requires User Password, Database'''
 import MySQLdb
 import sys
 
