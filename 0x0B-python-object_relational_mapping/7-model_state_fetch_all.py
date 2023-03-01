@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that lists all State objects from the database hbtn_0e_6_usa
+Script to list all State objects from the database hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State

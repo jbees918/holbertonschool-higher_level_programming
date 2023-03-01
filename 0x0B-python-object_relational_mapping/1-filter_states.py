@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This script lists all states with name starting
-with N (uppercase N) from database hbtn_0e_0_usa.
+    Script that lists all states with a name starting with N
+    (upper N) from the database hbtn_0e_0_usa.
 """
 import MySQLdb
 import sys
@@ -9,15 +9,15 @@ import sys
 
 def print_stateN():
     """
-        Print the states from the database
+    Print states from database
     """
-    db = MySQLdb.connect(host='localhost', 
+    db = MySQLdb.connect(host='localhost',
                          port=3306,
                          user=sys.argv[1],
-                         paswd=sys.argv[2],
+                         passwd=sys.argv[2],
                          database=sys.argv[3])
-    cur.dbcursor()
-    cur.execute("SESECT * FROM states WHERE name LIKE BINARY 'N%'\
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%'\
                 ORDER BY states.id ASC;")
     for row in cur.fetchall():
         print(row)

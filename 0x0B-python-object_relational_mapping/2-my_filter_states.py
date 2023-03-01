@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-This script takes in an arg and displays
+Script to take in an argument and displays
 all values in the states table of hbtn_0e_0_usa
-when name matches arguments.
+where name matches the argument.
 """
 import MySQLdb
 import sys
@@ -10,9 +10,9 @@ import sys
 
 def print_state_id():
     db = MySQLdb.connect(host='localhost',
-                         port=3306
+                         port=3306,
                          user=sys.argv[1],
-                         passwd=sys.argv[2]
+                         passwd=sys.argv[2],
                          database=sys.argv[3])
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'\
@@ -26,4 +26,4 @@ def print_state_id():
 
 
 if __name__ == "__main__":
-    print_state_id
+    print_state_id()
