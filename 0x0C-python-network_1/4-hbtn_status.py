@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Write a Python script that fetches
+Write a Python script to fetch
 https://intranet.hbtn.io/status
 """
 import requests
