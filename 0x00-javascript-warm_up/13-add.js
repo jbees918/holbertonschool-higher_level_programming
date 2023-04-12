@@ -1,3 +1,10 @@
 #!/usr/bin/node
-const add = require('./13-add').add;
-console.log(add(3, 5));
+// This script is to print addition of 2 integers
+// The function must be visible from outside
+// The name of the function must be add
+// You are not allowed to use var
+exports.add = function (a, b) {
+  a = parseInt(a);
+  b = parseInt(b);
+  return a + b;
+};
